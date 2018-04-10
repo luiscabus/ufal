@@ -3,8 +3,8 @@
 
 void printarg(int nchars, char **argv) {
 	if (nchars < 0) {return;}
-	printf("%s\n", argv[nchars]);
 	printarg(nchars - 1, argv);
+	printf("%s\n", argv[nchars]);
 }
 
 int main(int argc, char **argv) {
