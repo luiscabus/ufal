@@ -1,0 +1,113 @@
+﻿<!-- 
+Internet e Web 
+
+Professor:
+Fábio Paraguaçu
+
+Alunos:
+Matheus Artur Costa
+Luís Alberto Pontes Cabús Setton
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Projeto de ieWeb do Matheus Costa</title>
+	<style>
+		body {
+			text-align: center;
+		}
+		h1, h2 {
+			display: inline-block;
+			background: #fff;
+		}
+	</style>
+	<script>
+		var numero_aleatorio;
+		numero_aleatorio = Math.floor((Math.random() * 20) + 1);
+		// alert("O número procurado será: "+numero_aleatorio);
+
+
+		var jogador1, jogador2, idade1, idade2;
+		jogador1 = prompt("Qual o nome do jogador 1?");
+		idade1 = prompt("Qual a idade do jogador 1?");
+		jogador2 = prompt("Qual o nome do jogador 2?");
+		idade2 = prompt("Qual a idade do jogador 2?");
+		// jogador1 = "Luis";
+		// jogador2 = "Matheus";
+		// idade1 = "32";
+		// idade2 = "22";
+
+		var acertosde1, acertosde2, errosde1, errosde2;
+		acertosde1 = 0;
+		acertosde2 = 0;
+		errosde1 = 0;
+		errosde2 = 0;
+
+		function jogada(davez){
+			var round, jogadordavez, vencedor, perdedor;
+			// alert(davez);
+
+			if (davez % 2 != 0){ // se é vez do jogador 1
+				jogadordavez = jogador1;
+			} else {
+				jogadordavez = jogador2;
+			}
+
+			round = prompt("Jogador "+jogadordavez+", digite sua aposta");
+			
+
+			if (round == numero_aleatorio) {
+			  
+			  if (davez % 2 != 0){ // se é vez do jogador 1
+					++acertosde1;
+					vencedor = jogador1;
+					perdedor = jogador2;
+				} else {// se é vez
+					++acertosde2;
+					vencedor = jogador2;
+					perdedor = jogador1;
+				}
+				
+				alert(jogador1+", "+idade1+" anos, acertou "+acertosde1+" vezes, errou "+errosde1+" vezes. "+jogador2+", "+idade2+" anos, acertou "+acertosde2+" vezes, errou "+errosde2+" vezes. Jogador "+vencedor+", você ganhou, meus parabéns. Jogador Y, você errou, jogue novamente e boa sorte!");
+				return;
+
+			} else {
+
+				if (davez % 2 != 0){ // se é vez do jogador 1
+					errosde1 = errosde1 + 1;
+				} else {// se é vez
+					errosde2 = errosde2 + 1;
+				}
+
+				if (round < numero_aleatorio) {
+					alert("Errou, o alvo é maior que " + round);
+				} else {
+					alert("Errou, o alvo é menor que " + round);
+				}
+				jogada(++davez);
+			}
+
+		}
+
+		jogada(1);
+		
+
+	</script>
+</head>
+<body>
+	<header> <!-- Cabeçalho -->
+		<h1>Jogo da <span>Advinhação</span></h1><br>
+		<h2>(um jogo da sorte <span id="numeroaleatorio"></span>)</h2>
+	</header> <!-- Cabeçalho fim -->
+
+	<section> <!-- Conteúdo -->
+		Numero sorteado: <span id="numero"></span>
+	</section> <!-- Conteúdo fim -->
+
+	<footer> <!-- Rodapé -->
+
+	</footer> <!-- Rodapé fim -->
+
+</body>
+</html>
