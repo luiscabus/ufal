@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Notas e Aprovação</title>
+	<style>
+		body {
+			text-align: center; 
+		}
+		h1, h2 {
+			display: inline-block;
+			background: #fff;
+		}
+	</style>
+	<script>
+		function mediadedoisnumeros() {
+			var nome, nota1, nota2, soma, media, status;
+			var aluno = 1;
+			document.write("<h1>Internet e Web</h1>")
+
+			while (aluno <= 3) {
+				nome = prompt("Digite o nome do aluno");
+				nota1 = prompt("Primeira nota");
+				nota2 = prompt("Segunda nota");
+				soma = parseInt(nota1) + parseInt(nota2);
+				media = soma / 2;
+
+				if (media >= 7) {
+					status = "Aprovado";
+				} 
+				if (media >=5 && media < 7) {
+					status = "Reavaliação"
+				}
+				if (media < 5) {
+					status = "Reprovado"
+				}
+				document.write("Aluno "+aluno+"<br> Nome: "+nome+"<br> Primeira nota: "+nota1+"<br>Segunda nota: "+nota2+"<br> Média:"+media+"<br> Status: "+status)
+				document.write("<br><br><br>")
+				// Aluno 00 Nome XXX Primeira nota: segunda nota: media: Status <br><br><br>
+				aluno++;
+			}
+		}
+
+		window.onload = function() {
+			// mediadedoisnumeros();
+		};
+	</script>
+</head>
+<body>
+	<header>
+		
+		<button class="calcular_media" onclick="mediadedoisnumeros();">Calcular Média</button>
+	</header>
+	<section>
+		
+	</section>
+	<footer>
+		
+	</footer>
+</body>
+</html>
