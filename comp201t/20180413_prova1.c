@@ -1,6 +1,21 @@
 #include <stdio.h>
 #include <math.h>
 
+int compare_double(double f1, double f2)
+{
+	double precision = 0.000000001;
+	if (((f1 - precision) < f2) && 
+		((f1 + precision) > f2))
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+
 double whatdelta(int a, int b, int c) { // b2 - 4 a c
 	return (1.00 * (b * b) - (4 * a * c));
 }
@@ -68,13 +83,19 @@ void scanline(int equacoes, int rolling) {
 	if (isnan(raizdedelta)) {
 		printf("SEM RESPOSTA\n");
 	} else {
-		if (raizdedelta != 0) {
-			raizes(a, b, c, raizdedelta, 1);
-			raizes(a, b, c, -raizdedelta, 2);
+
+		if (compare_double(raizdedelta, 0.000000)) {
+			raizdedelta = 0;
 		}
+		
 
 		if (raizdedelta == 0) {
 			raizes(a, b, c, raizdedelta, 0);
+		}
+
+		if (raizdedelta != 0) {
+			raizes(a, b, c, raizdedelta, 1);
+			raizes(a, b, c, -raizdedelta, 2);
 		}
 	}
 
