@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tarefa 3, Projeto 1</title>
+	<script>
+		function proj3() {
+			var a, b, c, delta, raiz1, raiz2;
+			a = prompt("Coeficiente da Ax2");
+			b = prompt("Coeficiente da Bx");
+			c = prompt("Coeficiente da C");
+
+			if (a == 0) {
+				alert("Não é uma equação do segundo grau.");
+			} else {
+				delta = (b * b - (4 * a * c));
+
+				alert("Os coeficientes são a="+a+" b="+b+" c="+c+" e Delta ="+delta);
+
+				if (delta < 0) {
+					alert("A equação não possui raízes reais");
+				}
+				if (delta == 0) {
+					raiz1 = (-b / 2 * a);
+					alert("A equação possui apenas uma raíz real");
+					alert("raiz1="+raiz1);
+				}
+				if (delta > 0) {
+					raiz1 = ( (-b + Math.sqrt(delta)) / 2 * a);
+					raiz2 = ( (-b - Math.sqrt(delta)) / 2 * a);
+					alert("Sim, tem raízes reais");
+					alert("raiz1="+raiz1+" raiz2="+raiz2)
+				}
+			}
+
+		}
+
+		window.onload = function() {
+			// proj3();
+		};
+	</script>
+	<style type="text/css">
+		html {background-color:lightgrey}
+		body {width:960px; margin: 0 auto;}
+		button {font-size:18px;padding:15px 40px;background-color:red;color:#FFF;border-radius:5px;}
+	</style>
+</head>
+<body>
+
+	<h1>Bhaskara - Tarefa 3, Projeto 1</h1>
+	<h3><a href="http://lmgtfy.com/?q=F%C3%B3rmula+de+Bhaskara">Link para mais explicações</a></h3>
+	<img src="bhaskara.jpg">
+	<p>A fórmula de Bhaskara é um método resolutivo para equações do segundo grau utilizado para encontrar raízes a partir dos coeficientes da equação. A fórmula de Bhaskara é um método resolutivo para equações do segundo grau cujo nome homenageia o grande matemático indiano que a demonstrou.</p>
+	<button onclick="proj3()">Calcular raízes</button>
+
+</body>
+</html>

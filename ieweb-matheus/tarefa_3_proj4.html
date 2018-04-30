@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tarefa 4 - Média</title>
+	<style type="text/css">
+		html {background-color:lightgrey}
+		body {width:960px; margin: 0 auto;}
+		button {font-size:18px;padding:15px 40px;background-color:red;color:#FFF;border-radius:5px;}
+	</style>
+</head>
+<body>
+
+	<h1>Médias - Tarefa 3, Projeto 4</h1>
+
+	<h2>Identificação do Aluno</h2>
+	<label>
+		Nome do Aluno
+		<input type="text" value="Luis" name="" id="aluno">
+	</label>
+	<label>
+		Número de matrícula
+		<input type="text" value="123412" name="" id="matricula">
+	</label>
+	<label>
+		Período
+		<input type="text" value="1o" name="" id="periodo">
+	</label>
+
+	<h3>Semana1</h3>
+	<label>
+		Glossário1
+		<input type="text" value="6" name="" id="gl1">
+	</label>
+	<label>
+		Tarefas1
+		<input type="text" value="0" name="" id="mt1">
+	</label>
+
+	<h3>Semana2</h3>
+	<label>
+		Glossário2
+		<input type="text" value="8" name="" id="gl2">
+	</label>
+	<label>
+		Tarefas2
+		<input type="text" value="10" name="" id="mt2">
+	</label>
+
+	<h3>Semana3</h3>
+	<label>
+		Tarefas3
+		<input type="text" value="7" name="" id="mt3">
+	</label>
+
+	<h3>Semana4</h3>
+	<label>
+		Tarefas4
+		<input type="text" value="5" name="" id="mt4">
+	</label>
+
+	<h3>Projeto Final</h3>
+	<label>
+		nota
+		<input type="text" value="8" name="" id="projfinal">
+	</label>
+
+	<hr>
+	<button onclick="calculaMedia();">Calcular a Média</button>
+
+	<h2>Média:</h2>
+	<div id="resultado">
+		
+	</div>
+
+
+
+
+	<script>
+		function roundUp(num, precision) {
+			precision = Math.pow(10, precision)
+			return Math.ceil(num * precision) / precision
+		}
+
+		function calculaMedia(){
+			var gl1, mt1, gl2, mt2, mt3, mt4;
+			gl1 = parseFloat(document.getElementById('gl1').value);
+			mt1 = parseFloat(document.getElementById('mt1').value);
+			gl2 = parseFloat(document.getElementById('gl2').value);
+			mt2 = parseFloat(document.getElementById('mt2').value);
+			mt3 = parseFloat(document.getElementById('mt3').value);
+			mt4 = parseFloat(document.getElementById('mt4').value);
+
+			var sem1, sem2, sem3, sem4;
+			sem1 = (gl1 * 0.2) + (mt1 * 0.8);
+			sem2 = (gl2 * 0.2) + (mt2 * 0.8);
+			sem3 = (mt3);
+			sem4 = (mt4);
+
+			var nota1, nota2;
+			nota1 = (sem1 + sem2 + sem3 + sem4) / 4;
+			nota2 = parseFloat(document.getElementById('projfinal').value);
+
+			var mediafinal;
+			mediafinal = (nota1 + nota2) / 2;
+
+			document.getElementById('resultado').innerHTML = "Olá, "+document.getElementById('aluno').value+", matrícula "+document.getElementById('matricula').value+", período "+document.getElementById('periodo').value+", suas médias nos semestres s1 e s2 são respectivamente " + sem1 + " e " + sem2 + ", sua nota1 é "+ nota1 + " e sua média final é " + mediafinal;
+			// alert("Olá, "+document.getElementById('aluno').value+", matrícula "+document.getElementById('matricula').value+", período "+document.getElementById('periodo').value+", suas médias nos semestres s1 e s2 são respectivamente " + sem1 + " e " + sem2 + ", sua nota1 é "+ nota1 + " e sua média final é " + mediafinal);
+
+			if (nota1 >= 7) {
+				alert("O aluno foi aprovado por média.")
+			} else {
+				if (sem1 < 7 || sem2 < 7 || sem3 < 7 || sem4 < 7) {
+					alert("O aluno precisa de reavaliação em um dos semestres.")	
+				}
+			}
+
+			// return false;
+		} 
+	</script>
+
+</body>
+</html>

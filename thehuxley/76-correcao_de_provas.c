@@ -1,9 +1,16 @@
 #include <stdio.h>
 
-void printArray(char my_array[], int posicao) {
-	if (posicao < 0) {return;}
-	printArray(my_array, posicao - 1);
-	printf("Posição %d, valor %c \n", posicao, my_array[posicao]);
+void mais_frequente(int array_notas[], int i, int lim_sup, int quantidade, int controle) {
+	if (i > lim_sup) {
+		printf("%d.0\n", controle);
+		return;
+	}
+	if (array_notas[i] > quantidade) {
+		quantidade = array_notas[i];
+		controle = i;
+	}
+
+	return mais_frequente(array_notas, i + 1, lim_sup, quantidade, controle);
 }
 
 int compareArray(char answers_array[], char st_answers_array[], int posicao, int contador) {
@@ -12,36 +19,39 @@ int compareArray(char answers_array[], char st_answers_array[], int posicao, int
 	return compareArray(answers_array, st_answers_array, posicao - 1, contador);
 }
 
-void scanStudents(char answers_array[]) {
+void scanStudents(char answers_array[], float naprovados, int last_std_no, int array_notas[]) {
 	int sudentNo;
 	scanf(" %d", &sudentNo);
-	if (sudentNo == 9999) {return;}
 
-	char st_answers_array[10] = {};
-	scanf(" %s", &st_answers_array);
-	// printArray(st_answers_array, 10-1);
+	if (sudentNo == 9999) {
+		printf("%.1lf%%\n", (naprovados / last_std_no) * 100);
+		mais_frequente(array_notas, 0, 10, 0, 0);
+		return;
+	}
 
-	float acertos;
+	char st_answers_array[10+1];
+	scanf(" %s", st_answers_array);
+
+	int acertos;
 	acertos = compareArray(answers_array, st_answers_array, 10-1, 0);
-	printf("%d %.1lf\n", sudentNo, acertos);
+	printf("%d %d.0\n", sudentNo, acertos);
 
-	scanStudents(answers_array);
+	array_notas[acertos] = array_notas[acertos] + 1;
+
+	if (acertos >= 6.0) {
+		naprovados = naprovados + 1;
+	}
+
+	last_std_no = sudentNo;
+	scanStudents(answers_array, naprovados, last_std_no, array_notas);
 }
 
 int main() {
-	// char string[200];
-	// char character;
-	// printf ("write something: ");
-	// scanf (" %s", string);
-	// printf ("%s\n\n", string);
-	// printf ("\nwrite a character: ");
-	// scanf (" %c", &character);
-	// printf ("\nCharacter %c  Correspondent number: %d\n", character, character);
 
-
-	char answers_array[10] = {};
+	char answers_array[10+1];
 	scanf (" %s", answers_array);
-	// printArray(answers_array, 10-1);
 
-	scanStudents(answers_array, 0);
+	int array_notas[11] = {};
+
+	scanStudents(answers_array, 0, 0, array_notas);
 }

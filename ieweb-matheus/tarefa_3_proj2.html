@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tarefa 3</title>
+	<script>
+		function triangulo() {
+			var lado1, lado2, lado3;
+			lado1 = parseInt(prompt("Vou te pedir três lados de um triângulo. Dê entrada no lado maior"));
+			lado2 = parseInt(prompt("Dê entrada no próximo lado"));
+			lado3 = parseInt(prompt("Dê entrada no último lado"));
+
+			if (lado1 >= lado2 + lado3) {
+				alert("Nenhum triângulo pode ser formado.");
+				return;
+			}
+
+			if ((lado1 * lado1) == (lado2 * lado2) + (lado3 * lado3)) {
+				alert("O triângulo é retângulo.");
+			}
+			if ((lado1 * lado1) > (lado2 * lado2) + (lado3 * lado3)) {
+				alert("O triângulo é obsutângulo.");
+			}
+			if ((lado1 * lado1) < (lado2 * lado2) + (lado3 * lado3)) {
+				alert("O triângulo é acutângulo.");
+			}
+		}
+
+		window.onload = function() {
+			// proj3();
+		};
+	</script>
+	<style type="text/css">
+		html {background-color:lightgrey}
+		body {width:960px; margin: 0 auto;}
+		button {font-size:18px;padding:15px 40px;background-color:red;color:#FFF;border-radius:5px;}
+	</style>
+</head>
+<body>
+
+	<h1>Triângulos - Tarefa 3, Projeto 2</h1>
+	<button onclick="triangulo()">Calcular triângulo</button>
+
+</body>
+</html>

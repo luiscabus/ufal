@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tarefa 3</title>
+	<script>
+		var menu_selfkg = 14.00;
+		var menu_coposuco = 3.00;
+		var menu_sobremesa = 2.00;
+
+		function calcularFatura(){
+			var user_name = prompt("Olá, favor digite seu nome");
+			var user_age = prompt("Informe sua idade");
+
+			var grams_comida = prompt("Quantos gramas de comida você comeu?");
+			var copos_suco = prompt("Tomou quantos sucos?");
+			var sobremesas = prompt("E comeu quantos pratos de sobremesa?");
+
+			var abatimento_taxa, abatimento_valor, valor_final;
+
+			grams_comida = parseFloat(grams_comida);
+			copos_suco = parseFloat(copos_suco);
+			sobremesas = parseFloat(sobremesas);
+
+			resultado = (grams_comida / 1000 * menu_selfkg) + (copos_suco * menu_coposuco) + (sobremesas * menu_sobremesa);
+			resultado = roundUp(resultado, 2);
+
+			if (user_age >= 40 && user_age <= 50) {
+				abatimento_taxa = 0.05;
+				abatimento_valor = roundUp(resultado * abatimento_taxa, 2);
+				valor_final = roundUp(resultado - abatimento_valor, 2);
+			}
+			if (user_age > 50 && user_age < 60) {
+				abatimento_taxa = 0.10;
+				abatimento_valor = roundUp(resultado * abatimento_taxa, 2);
+				valor_final = roundUp(resultado - abatimento_valor, 2);
+			}
+			if (user_age >= 60) {
+				abatimento_taxa = 0.15;
+				abatimento_valor = roundUp(resultado * abatimento_taxa, 2);
+				valor_final = roundUp(resultado - abatimento_valor, 2);
+			}
+
+
+			if (!isNaN(grams_comida) && !isNaN(copos_suco) && !isNaN(sobremesas)){
+				resultado_html = "<p>Olá, " + user_name + ", voce comeu "+ grams_comida + "g de comida, tomou "+ copos_suco+" copos de suco e comeu "+sobremesas+" sobremesas. Seu total é: " + resultado + "</p>"
+				if (abatimento_valor > 0) {
+					resultado_html = resultado_html + "<p>"+user_age+" anos, tem "+roundUp(abatimento_taxa * 100, 0)+"%, "+resultado+"-"+abatimento_valor+"="+valor_final+".</p>"
+				} else {
+					resultado_html = resultado_html + "<p>"+user_age+" anos, não tem abatimento.</p>"
+				}
+				document.getElementById('resultado').innerHTML = resultado_html;
+				alert(resultado_html);
+			}
+
+		}
+
+		function roundUp(num, precision) {
+		  precision = Math.pow(10, precision)
+		  return Math.ceil(num * precision) / precision
+		}
+	</script>
+	<style type="text/css">
+		html {background-color:lightgrey}
+		body {width:960px; margin: 0 auto;}
+		button {font-size:18px;padding:15px 40px;background-color:red;color:#FFF;border-radius:5px;}
+	</style>
+</head>
+<body>
+
+	<h1>Triângulos - Tarefa 3, Projeto 3</h1>
+	<button onclick="calcularFatura()">Calcular conta</button>
+	<div id="resultado"></div>
+
+</body>
+</html>
