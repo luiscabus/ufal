@@ -61,8 +61,13 @@ void serie(int limite, int numerador, int denominador, double resultado) {
 	
 	// printf(" + %d!/%d", numerador, denominador, resultado);
 
+	// 1!/1 + 2!/2 + 3!/3 + 4!/5 + 5!/7 + 6!/11 + 7!/13 + 8!/17 + 9!/19 + 10!/23
+	// denominador = denominador + 1;
 
-	denominador = denominador + 1;
+	// 1!/1 + 2!/2 + 3!/3 + 4!/5 + 5!/5 + 6!/7 + 7!/7 + 8!/11 + 9!/11 + 10!/11
+	if (numerador >= denominador) {
+		denominador = denominador + 1;
+	}
 
 	int veriprimo = eh_primo(denominador, 1, 0);
 
@@ -80,7 +85,7 @@ void serie(int limite, int numerador, int denominador, double resultado) {
 
 
 int main() {
-	printf("\033c"); //Clear terminal before code output
+	// printf("\033c"); //Clear terminal before code output
 	
 	int numero;
 	scanf("%d", &numero);
