@@ -1,3 +1,4 @@
+#include <stdio.h>
 
 void map(int (*f)(int), int array[], int i) {
 	if (i == 0) {
@@ -13,6 +14,10 @@ int square(int x) {
 	return x * x;
 }
 
+int cube(int x) {
+	return x * x * x;
+}
+
 int main() {
 
 	int array[4];
@@ -25,10 +30,18 @@ int main() {
 
 	int i;
 
-	for (int i = 0; i < 4; ++i)
+	for (i = 0; i < 4; ++i)
 	{
 		printf("Pos %d Val %d\n", i, array[i]);
 	}
+	
+	map(cube, array, 4);
+	
+	for (i = 0; i < 4; ++i)
+	{
+		printf("Pos %d Val %d\n", i, array[i]);
+	}
+	
 
 	return 0;
 }
