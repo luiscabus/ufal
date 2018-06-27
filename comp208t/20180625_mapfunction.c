@@ -23,6 +23,8 @@ int main() {
 
 	map(square, array, 4);
 
+	int i;
+
 	for (int i = 0; i < 4; ++i)
 	{
 		printf("Pos %d Val %d\n", i, array[i]);
