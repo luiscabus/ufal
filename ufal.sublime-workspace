@@ -1,0 +1,277 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 588.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"gp",
+				"Git: Push"
+			],
+			[
+				"gs",
+				"Git: Status"
+			],
+			[
+				"gpu",
+				"Git: Push"
+			],
+			[
+				"sfb",
+				"SFTP: Browse Remote…"
+			],
+			[
+				"waka",
+				"WakaTime: Open Dashboard"
+			],
+			[
+				"gitconfig",
+				"Set Syntax: Git Config"
+			],
+			[
+				"gitpu",
+				"Git: Push"
+			],
+			[
+				"gps",
+				"Git: Push"
+			],
+			[
+				"gqu",
+				"Git: Quick Commit"
+			],
+			[
+				"pain",
+				"Package Control: Install Package"
+			],
+			[
+				"pare",
+				"Package Control: Remove Package"
+			],
+			[
+				"pavi",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"parem",
+				"Package Control: Remove Package"
+			],
+			[
+				"paco",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Satisfy Dependencies"
+			],
+			[
+				"install",
+				"Install Package Control"
+			]
+		],
+		"width": 714.0
+	},
+	"console":
+	{
+		"height": 172.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/luiscabus/Dropbox/Sites/ufal"
+	],
+	"file_history":
+	[
+		"/C/Users/luiscabus/Dropbox/Sites/learnNodeMcu/blynk_rfid_oled/blynk_rfid_oled.ino",
+		"/C/Users/luiscabus/.ssh/known_hosts",
+		"/C/users/luisca~1/appdata/local/temp/sublime-sftp-browse-1532640481/mapped/www/blog/index.php",
+		"/C/users/luisca~1/appdata/local/temp/sublime-sftp-browse-1532640437/mapped/www/web.config",
+		"/C/Users/luiscabus/Dropbox/Sites/- lojaamelie_blog/New Text Document.txt",
+		"/C/users/luisca~1/appdata/local/temp/sublime-sftp-browse-1532640447/mapped/www/.user.ini",
+		"/C/Users/luiscabus/Dropbox/Sites/- lojaamelie_blog/sftp-config.json",
+		"/Csftp-config.json",
+		"/Csftp-config-alt.json",
+		"/C/Users/luiscabus/Dropbox/Sites/-  lojamodelo/sftp-config.json",
+		"/C/Users/luiscabus/AppData/Roaming/Sublime Text 3/Packages/User/domains-filter.sublime-macro",
+		"/C/Users/luiscabus/Dropbox/_ Chaves/pvt chain/UTC--2018-05-20T15-56-09.281Z--e39ef3e5d20c866f80dbdff4acac66e0f9962b22",
+		"/C/Users/luiscabus/AppData/Roaming/Sublime Text 3/Packages/User/oscrypto-ca-bundle.crt",
+		"/C/Users/luiscabus/AppData/Roaming/Sublime Text 3/Packages/User/.gitignore",
+		"/C/Users/luiscabus/AppData/Roaming/Sublime Text 3/Packages/User - Copy/WakaTime.sublime-settings",
+		"/C/Users/luiscabus/Dropbox/Sites/ufal/comp201t/20180511_prova_maior_toca.c",
+		"/C/Users/luiscabus/Dropbox/Sites/- bikinifox/css/layout.css",
+		"/C/Users/luiscabus/AppData/Roaming/Sublime Text 3/Packages/LiveStyle/livestyle-plugin.py",
+		"/C/Users/luiscabus/AppData/Roaming/Sublime Text 3/Packages/LiveStyle/livestyle/static/livestyle-client.js",
+		"/C/Users/luiscabus/AppData/Roaming/Sublime Text 3/Packages/LiveStyle/livestyle/server.py",
+		"/C/Users/luiscabus/AppData/Roaming/Sublime Text 3/Packages/LiveStyle/livestyle/event_dispatcher.py",
+		"/C/Users/luiscabus/AppData/Roaming/Sublime Text 3/Packages/LiveStyle/livestyle/client.py",
+		"/C/Users/luiscabus/Dropbox/Sites/- endymesquita/checkout.asp",
+		"/C/Users/luiscabus/Dropbox/Sites/- endymesquita/carrinho.asp",
+		"/C/Users/luiscabus/floobits/welcome.md"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 158.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 47.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.deviot":
+	{
+		"height": 137.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git-commit":
+	{
+		"height": 115.0
+	},
+	"output.git-pull":
+	{
+		"height": 115.0
+	},
+	"output.git-push":
+	{
+		"height": 232.0
+	},
+	"output.sftp":
+	{
+		"height": 158.0
+	},
+	"pinned_build_system": "",
+	"project": "ufal.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 217.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
