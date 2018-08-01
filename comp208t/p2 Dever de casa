@@ -1,0 +1,30 @@
+p2 Dever de casa:
+
+fazer funcao filter
+
+recebe funcao e array
+
+ex:
+	filter(par, [1,2,3,4]) = [2,4]
+	impar..
+	primos..
+	etc
+
+
+
+matdisc Dever de casa:
+Sn = 7, 17, 107, 1007, 10007
+
+
+
+
+
+
+
+
+https://openwrt.org/
+
+https://apple.stackexchange.com/questions/131852/how-do-you-force-a-5-ghz-wifi-connection
+sudo /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/sbin/airport -s
+sudo /System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport --channel=3
+sudo /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/sbin/airport -c 
