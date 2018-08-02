@@ -1,13 +1,13 @@
 #include <stdio.h>
 
-void map(int (*f)(int), int array[], int i) {
-	if (i == 0) {
+void map(int (*f)(int), int array[], int limite, int i) {
+	if (i == limite) {
 		return;
 	}
 
 	array[i] = (*f)(array[i]);
 
-	map((*f), array, i - 1);
+	map((*f), array, limite, ++i);
 }
 
 int square(int x) {
@@ -26,7 +26,7 @@ int main() {
 	array[2] = 3;
 	array[3] = 4;
 
-	map(square, array, 4);
+	map(square, array, 4, 0);
 
 	int i;
 
@@ -35,7 +35,7 @@ int main() {
 		printf("Pos %d Val %d\n", i, array[i]);
 	}
 	
-	map(cube, array, 4);
+	map(cube, array, 4, 0);
 	
 	for (i = 0; i < 4; ++i)
 	{
