@@ -3,6 +3,14 @@
 #include <math.h>
 #include <stdlib.h>
 
+void printArray(char string[], int i) {
+	if (i < 0) {
+		return;
+	}
+	printf("%c", string[i]);
+	printArray(string, i - 1);
+}
+
 void buildArray(char string[], int i) {
 	// char aux; // Compoprtamento estranho
 	// aux = scanf("%c", &string[i]); // Comportamento estranho
@@ -12,14 +20,6 @@ void buildArray(char string[], int i) {
 	}
 	// scanf("%c", &string[i]);
 	buildArray(string, i + 1);
-}
-
-void printArray(char string[], int i) {
-	if (i < 0) {
-		return;
-	}
-	printf("%c", string[i]);
-	printArray(string, i - 1);
 }
 
 int main() {

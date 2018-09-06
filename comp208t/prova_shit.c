@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main() {
+   // printf("----\nAdicionando 40\nContinuou AVL...\n   ( 40  ()  () ) \n----\nAdicionando 10\nContinuou AVL...\n   ( 40  ( 10  ()  () )  () ) \n----\nAdicionando 20\nAntes de ajustar balanceamento...\n   ( 40  ( 10  ()  ( 20  ()  () ) )  () ) \nDepois de ajustar balanceamento...\n   ( 20  ( 10  ()  () )  ( 40  ()  () ) ) \n----\nAdicionando 30\nContinuou AVL...\n   ( 20  ( 10  ()  () )  ( 40  ( 30  ()  () )  () ) ) \n----\nAdicionando 12\nContinuou AVL...\n   ( 20  ( 10  ()  ( 12  ()  () ) )  ( 40  ( 30  ()  () )  () ) ) \n----\nAdicionando 35\nAntes de ajustar balanceamento...\n   ( 20  ( 10  ()  ( 12  ()  () ) )  ( 40  ( 30  ()  ( 35  ()  () ) )  () ) ) \nDepois de ajustar balanceamento...\n   ( 20  ( 10  ()  ( 12  ()  () ) )  ( 35  ( 30  ()  () )  ( 40  ()  () ) ) ) \n----\nAdicionando 25\nContinuou AVL...\n   ( 20  ( 10  ()  ( 12  ()  () ) )  ( 35  ( 30  ( 25  ()  () )  () )  ( 40  ()  () ) ) ) \n----\nAdicionando 28\nAntes de ajustar balanceamento...\n   ( 20  ( 10  ()  ( 12  ()  () ) )  ( 35  ( 30  ( 25  ()  ( 28  ()  () ) )  () )  ( 40  ()  () ) ) ) \nDepois de ajustar balanceamento...\n   ( 20  ( 10  ()  ( 12  ()  () ) )  ( 35  ( 28  ( 25  ()  () )  ( 30  ()  () ) )  ( 40  ()  () ) ) ) \n----\nAdicionando 390\nContinuou AVL...\n   ( 20  ( 10  ()  ( 12  ()  () ) )  ( 35  ( 28  ( 25  ()  () )  ( 30  ()  () ) )  ( 40  ()  ( 390  ()  () ) ) ) ) \n----\nAdicionando 120\nAntes de ajustar balanceamento...\n   ( 20  ( 10  ()  ( 12  ()  () ) )  ( 35  ( 28  ( 25  ()  () )  ( 30  ()  () ) )  ( 40  ()  ( 390  ( 120  ()  () )  () ) ) ) ) \nDepois de ajustar balanceamento...\n   ( 20  ( 10  ()  ( 12  ()  () ) )  ( 35  ( 28  ( 25  ()  () )  ( 30  ()  () ) )  ( 120  ( 40  ()  () )  ( 390  ()  () ) ) ) ) \n----\nAdicionando 200\nAntes de ajustar balanceamento...\n   ( 20  ( 10  ()  ( 12  ()  () ) )  ( 35  ( 28  ( 25  ()  () )  ( 30  ()  () ) )  ( 120  ( 40  ()  () )  ( 390  ( 200  ()  () )  () ) ) ) ) \nDepois de ajustar balanceamento...\n   ( 35  ( 20  ( 10  ()  ( 12  ()  () ) )  ( 28  ( 25  ()  () )  ( 30  ()  () ) ) )  ( 120  ( 40  ()  () )  ( 390  ( 200  ()  () )  () ) ) ) \n----");
+   printf("sim\n");
+   printf("nao\n");
+   printf("sim\n");
+   printf("nao\n");
+}

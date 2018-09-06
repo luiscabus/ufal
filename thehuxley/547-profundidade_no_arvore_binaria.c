@@ -1,17 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <math.h>
 #include <ctype.h>
 
-int current;
-int chars_array[1000];
+int current, gotyou;
 
-typedef struct struct_tree {
+typedef struct Stree struct_tree;
+
+struct Stree {
 	int value;
-	struct struct_tree *left;
-	struct struct_tree *right;
-} struct_tree;
+	struct_tree *left;
+	struct_tree *right;
+};
+
 
 struct_tree *createTree(int value, struct_tree *left, struct_tree *right) {
 	struct_tree *new_tree = (struct_tree*) malloc(sizeof(struct_tree));
@@ -61,36 +62,28 @@ void search_in_tree(struct_tree *binary_tree, int busca, int nivel) {
 	search_in_tree(binary_tree->right, busca, nivel + 1);
 }
 
+
 int main() {
 	char string[1000];
 
-	int i; // inicializa o chars_array
-	for(i = 0; i < 1000; i++){
-		chars_array[i] = -1;
-	}
+	int numero;
 
-	struct_tree *my_tree = NULL;
-	gets(chars_array);
+	struct_tree *binary_tree = NULL;
 
+	gets(string);
 	current = 0;
-	my_tree = build_tree(chars_array);
+	gotyou = 0;
 
-	i = 0;
-	while(1) {
-		printf("string valor %d\n", chars_array[i]);
+	binary_tree = build_tree(string);
 
-		if(chars_array[i] == -1){
-			break;
-		} else {
-			if((chars_array[i+1] != -1)  && chars_array[i+1] < chars_array[i]){
-				printf("FALSO\n");
-				return 0;
-			}
-			i++;
-		}
+	scanf("%d", &numero);
+	
+	search_in_tree(binary_tree, numero, 0);
+	
+	if(gotyou == 0) {
+		printf("NAO ESTA NA ARVORE\n");
+		printf("-1");
 	}
-
-	printf("VERDADEIRO\n");
-
+	
 	return 0;
 }
