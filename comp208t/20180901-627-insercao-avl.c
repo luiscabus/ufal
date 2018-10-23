@@ -16,17 +16,17 @@ int max(int a, int b) {
 	return (a > b) ? a : b;
 }
 
-int h(binary_tree *bt) {
+int height(binary_tree *bt) {
 	if (bt == NULL) {
 		return -1;
 	} else {
-		return 1 + max( h(bt->left), h(bt->right) );
+		return 1 + max( height(bt->left), height(bt->right) );
 	}
 }
 
 int is_balanced(binary_tree *bt) {
-	int bf = h(bt->left) - h(bt->right);
-	return ( (-1 <= bf) && (bf <= 1) );
+	int balance_factor = height(bt->left) - height(bt->right);
+	return ( (-1 <= balance_factor) && (balance_factor <= 1) );
 }
 
 int balance_factor(binary_tree *bt) {
@@ -41,36 +41,37 @@ int balance_factor(binary_tree *bt) {
 	}
 }
 
-binary_tree* new_leaf(int item, binary_tree *left, binary_tree *right) {
+binary_tree *new_leaf(int item, binary_tree *left, binary_tree *right) {
 	binary_tree *new_leaf = malloc(sizeof(binary_tree));
 	new_leaf->item = item;
+	new_leaf->h = 0;
 	new_leaf->left = NULL;
 	new_leaf->right = NULL;
 	// *raiz = new_leaf;
 	return new_leaf;
 }
 
-binary_tree* rotate_left(binary_tree *bt) {
+binary_tree *rotate_left(binary_tree *bt) {
 	binary_tree *subtree_root = NULL;
 	if (bt != NULL && bt->right != NULL) {
 		subtree_root = bt->right;
 		bt->right = subtree_root->left;
 		subtree_root->left = bt;
 	}
-	subtree_root->h = h(subtree_root);
-	bt->h = h(bt);
+	subtree_root->h = height(subtree_root);
+	bt->h = height(bt);
 	return subtree_root;
 }
 
-binary_tree* rotate_right(binary_tree *bt) {
+binary_tree *rotate_right(binary_tree *bt) {
 	binary_tree *subtree_root = NULL;
 	if (bt != NULL && bt->left != NULL) {
 		subtree_root = bt->left;
 		bt->left = subtree_root->right;
 		subtree_root->right = bt;
 	}
-	subtree_root->h = h(subtree_root);
-	bt->h = h(bt);
+	subtree_root->h = height(subtree_root);
+	bt->h = height(bt);
 	return subtree_root;
 }
 
@@ -91,6 +92,7 @@ void print_tree(binary_tree *raiz, int nivel) {
 	} else {
 		// printf(" ( %d ", raiz->item);
 		printf(" ( %d ", raiz->item);
+		printf(" h%d n%d ", raiz->h, nivel);
 	}
 
 	print_tree(raiz->left, ++nivel);
@@ -100,7 +102,7 @@ void print_tree(binary_tree *raiz, int nivel) {
 }
 
 
-binary_tree* add_to_tree(binary_tree *raiz, int valor) {
+binary_tree *add_to_tree(binary_tree *raiz, int valor) {
 
 	// printf("Adicionando valor %d\n", valor);
 
@@ -112,29 +114,30 @@ binary_tree* add_to_tree(binary_tree *raiz, int valor) {
 		raiz->right = add_to_tree(raiz->right, valor);
 	}
 
-	// raiz->h = h(raiz);
-	// binary_tree *child;
+	raiz->h = height(raiz);
+	
+	binary_tree *child;
 
-	// if (balance_factor(raiz) == 2 || balance_factor(raiz) == -2) {
-	// 	if (balance_factor(raiz) == 2) {
-	// 		child = raiz->left;
-	// 		if (balance_factor(child) == -1) {
-	// 			raiz->left = rotate_left(child);
-	// 		}
-	// 		raiz = rotate_right(raiz);
-	// 	} else if (balance_factor(raiz) == -2) {
-	// 		child = raiz->right;
-	// 		if (balance_factor(child) == 1) {
-	// 			raiz->right = rotate_right(child);
-	// 		}
-	// 		raiz = rotate_left(raiz);
-	// 	}
-	// }
+	if (balance_factor(raiz) == 2 || balance_factor(raiz) == -2) {
+		if (balance_factor(raiz) == 2) {
+			child = raiz->left;
+			if (balance_factor(child) == -1) {
+				raiz->left = rotate_left(child);
+			}
+			raiz = rotate_right(raiz);
+		} else if (balance_factor(raiz) == -2) {
+			child = raiz->right;
+			if (balance_factor(child) == 1) {
+				raiz->right = rotate_right(child);
+			}
+			raiz = rotate_left(raiz);
+		}
+	}
 
 	return raiz;
 }
 
-binary_tree* balance_this_tree(binary_tree *raiz) {
+binary_tree *balance_this_tree(binary_tree *raiz) {
 
 	printf("AJUSTANDO BALANCEAMENTO\n");
 
@@ -146,7 +149,7 @@ binary_tree* balance_this_tree(binary_tree *raiz) {
 	raiz->right = balance_this_tree(raiz->right);
 
 
-	raiz->h = h(raiz);
+	raiz->h = height(raiz);
 	binary_tree *child;
 
 	if (balance_factor(raiz) == 2 || balance_factor(raiz) == -2) {
